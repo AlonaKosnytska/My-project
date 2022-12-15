@@ -1,18 +1,23 @@
+import { AppBar, IconButton, Toolbar, Typography } from '@mui/material'
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import React from 'react'
-import { HeaderInterface } from '../types/props'
 import { Link } from 'react-router-dom'
-import HomePage from '../pages/HomePage'
-const Header = ({HomePage}:HeaderInterface) => {
+
+const Header = () => {
   return (
-    <div>
-      <nav>
-        <a href="#">{HomePage}</a>
-        <Link to='HomePage'>HomePage</Link>
-      </nav>
-      
-      
-    </div>
-  )
+    <AppBar position ='static'>
+      <Toolbar>
+        <Typography variant="h6" component="span"sx={{ flexGrow: 1 }}>
+          All world here
+        </Typography>
+        <Link to="/">HomePage</Link>
+        <IconButton color="inherit" >
+          <FavoriteIcon />
+        </IconButton>
+        
+      </Toolbar>
+    </AppBar>
+  );
 }
 
 export default Header

@@ -1,9 +1,11 @@
-import React,{useState,useEffect} from 'react'
+import React, {
+  useEffect
+} from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchCountry } from '../redux/countriesSlice'
 import { useAppDispatch, useAppSelector } from '../redux/reduxHooks'
 
-import { CountryT } from '../types/data'
+
 
 const CountryPage = () => {
   const { name } = useParams()  

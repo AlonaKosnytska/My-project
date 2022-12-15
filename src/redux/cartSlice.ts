@@ -1,4 +1,3 @@
-import { StarRateRounded } from "@mui/icons-material"
 import { createSlice,PayloadAction } from "@reduxjs/toolkit"
 import { CountryT } from "../types/data"
 

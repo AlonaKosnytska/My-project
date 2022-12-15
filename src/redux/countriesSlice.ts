@@ -1,4 +1,4 @@
-import { StarRateRounded } from "@mui/icons-material"
+
 import { createAsyncThunk,createSlice,PayloadAction } from "@reduxjs/toolkit"
 import { CountryT } from "../types/data"
 export type CountriesState = {
@@ -21,7 +21,7 @@ const countriesSlice = createSlice({
     name: "countries",
     initialState,
     reducers: {
-        sortByName: (state, action: PayloadAction<string>) => {
+        sortByName: (state) => {
             state.countries.sort((a,b)=>(a.name.official.toLowerCase()>b.name.official.toLowerCase()?1:-1))
         },
         sortByPopulation: (state, action: PayloadAction<string>) => {
@@ -30,14 +30,16 @@ const countriesSlice = createSlice({
 
         search: (state, action: PayloadAction<string>) => {
             state.filtered=[]
-            let input = action.payload 
+             let input = action.payload 
             if (!input) {
                 state.filtered=[]
-            } else {
-            state.filtered = state.countries.filter((c) => {
-            c.name.official.toLowerCase().includes(input.toLowerCase())
+            } else{
+                state.filtered = state.countries.filter((c) => {
+                return  c.name.official.toLowerCase().includes(input.toLowerCase())
+           
           })
             }
+            
     
         },
     },
