@@ -8,3 +8,4 @@ implemented the following features:
 - add/remove the countries to/from favorite list using Redux
 - sort the table based on name, region, etc.
 
+ 
